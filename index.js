@@ -1,48 +1,166 @@
-const generateEmployeeInfo = require("./dist/generateEmployeeInfo");
+const generateEmployeeInfo = require("./src/generateEmployeeInfo");
 const fs = require("fs");
 const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+const newEmployee = [];
 
-const employee = new Employee();
+const choices = function () {
+  inquirer
+    .prompt([
+      {
+        name: "employee",
+        type: "list",
+        message: "Position:",
+        choices: ["Manager", "Engineer", "Intern", "Position's Filled"],
+      },
+    ])
+    .then(function (select) {
+      if (select.employee === "Engineer") {
+        engineerQ();
+      } else if (select.employee === "Intern") {
+        internQ();
+      } else if (select.employee === "Manager") {
+        managerQ();
+      } else {
+        positionfilled();
+      }
+    });
+};
 
-employee.getName();
+const engineerQ = function () {
+  inquirer
+    .prompt([
+      {
+        name: "id",
+        type: "input",
+        message: "What is the Employee Id number?",
+      },
+      {
+        name: "name",
+        type: "input",
+        message: "What is the name of the Employee?",
+      },
 
-const questions = [
-  {
-    name: "id",
-    type: "input",
-    message: "What is the name of the Manager's ID?",
-    default: "1",
-  },
+      {
+        name: "email",
+        type: "input",
+        message: "Please provide email address?",
+      },
+      {
+        name: "github",
+        type: "input",
+        message: "Please provide GitHub Username?",
+      },
+    ])
+    .then((engineer) => {
+      console.log(engineer);
+      var engineer = new Engineer(
+        engineer.id,
+        engineer.name,
+        engineer.email,
+        engineer.github,
+        engineer.role
+      );
+      if (engineer.github) {
+        engineer.role = "Engineer";
+      }
+      newEmployee.push(engineer);
+      choices();
+    });
+};
 
-  {
-    name: "email",
-    type: "input",
-    message: "Please provide email address?",
-  },
+const managerQ = function () {
+  inquirer
+    .prompt([
+      {
+        name: "id",
+        type: "input",
+        message: "What is the Employee Id number?",
+      },
+      {
+        name: "name",
+        type: "input",
+        message: "What is the name of the Employee?",
+      },
 
-  {
-    name: "employee",
-    type: "list",
-    message: "Position:",
-    choices: ["Manager"],
-  },
-];
+      {
+        name: "email",
+        type: "input",
+        message: "Please provide email address?",
+      },
+      {
+        name: "office",
+        type: "input",
+        message: "Please provide office number?",
+      },
+    ])
+    .then((manager) => {
+      console.log(manager);
+      var manager = new Manager(
+        manager.id,
+        manager.name,
+        manager.email,
+        manager.office
+      );
+      if (manager.office) {
+        manager.role = "Manager";
+      }
+      newEmployee.push(manager);
+      choices();
+    });
+};
 
-// //Would this function be here or in Employee test?
-// function writeToFile(fileName, data) {
-//   fs.writeFile(fileName, data, (err) => {
-//     if (err) {
-//       throw err;
-//     } else {
-//       console.log("Success! A Index file has now been created.");
-//     }
-//   });
-// }
+const internQ = function () {
+  inquirer
+    .prompt([
+      {
+        name: "id",
+        type: "input",
+        message: "What is the Employee Id number?",
+      },
+      {
+        name: "name",
+        type: "input",
+        message: "What is the name of the Employee?",
+      },
 
-// function init() {
-//   inquirer.prompt(Employee).then((data) => {
-//     console.log(data);
-//     writeToFile("index.html", generateEmployeeInfo(data));
-//   });
-// }
+      {
+        name: "email",
+        type: "input",
+        message: "Please provide email address?",
+      },
+      {
+        name: "school",
+        type: "input",
+        message: "Which School did you go to?",
+      },
+    ])
+    .then((intern) => {
+      console.log(intern);
+      var intern = new Intern(
+        intern.id,
+        intern.name,
+        intern.email,
+        intern.school
+      );
+      if (intern.school) {
+        intern.role = "Intern";
+        newEmployee.push(intern);
+      }
+      choices();
+    });
+};
+
+choices();
+
+function positionfilled() {
+  console.log(newEmployee);
+  fs.writeFileSync(
+    "./dist/index.html",
+    generateEmployeeInfo(newEmployee),
+    "utf-8"
+  );
+}
