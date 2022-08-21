@@ -1,5 +1,5 @@
 const Manager = require("../lib/Manager");
-
+const Employee = require("../lib/Employee");
 /*
 Step 1: Describe
 Step 2:it:Label of what try to do
@@ -9,6 +9,6 @@ Step 5:assortion:What to expect
 */
 
 test("Role should return Manager", () => {
-  const manager1 = new Manager1();
+  const testManager = new testManager1("name", 1, "name@gmail.com", 2);
   Manager.getRole();
 });
