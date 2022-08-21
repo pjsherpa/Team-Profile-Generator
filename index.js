@@ -68,7 +68,7 @@ const engineerQ = function () {
         engineer.role = "Engineer";
       }
       newEmployee.push(engineer);
-      choices();
+      return choices();
     });
 };
 
@@ -109,7 +109,7 @@ const managerQ = function () {
         manager.role = "Manager";
       }
       newEmployee.push(manager);
-      choices();
+      return choices();
     });
 };
 
@@ -150,7 +150,7 @@ const internQ = function () {
         intern.role = "Intern";
         newEmployee.push(intern);
       }
-      choices();
+      return choices();
     });
 };
 
@@ -161,6 +161,13 @@ function positionfilled() {
   fs.writeFileSync(
     "./dist/index.html",
     generateEmployeeInfo(newEmployee),
-    "utf-8"
+    "utf-8",
+    function (err) {
+      if (err) {
+        throw err;
+      } else {
+        console.log("Success! A readme file has now been created.");
+      }
+    }
   );
 }

@@ -1,6 +1,3 @@
-//need to change info links
-const index = require("../index");
-
 function generateEmployeeInfo(info) {
   `<!DOCTYPE html>
 <html lang="en">
@@ -26,53 +23,53 @@ function generateEmployeeInfo(info) {
     <div class="col-6">
   <div class="card text-bg-light mb-3 shadow" style="max-width: 18rem;">
     <!-- Input name -->
-    <div class="card-header bg-primary text-white"><h1>${info.name}
+    <div class="card-header bg-primary text-white"><h1>${info[0].name}
       <br>
-     ☕️ ${info.role}</h1>
+     ☕️ ${info[0].role}</h1>
     </div>
     <div class="card-body">
  
       <ul class="list-group list-group-flush">
 <!-- Input email and github -->
 
-        <li class="list-group-item">ID: ${info.id} </li>
-        <li class="list-group-item">Email:${info.MEmail}</li>
-        <li class="list-group-item">Office number:${info.Office}</li>
+        <li class="list-group-item">ID: ${info[0].id} </li>
+        <li class="list-group-item">Email:${info[0].email}</li>
+        <li class="list-group-item">Office number:${info[0].Office}</li>
       </ul>
     </div>
   </div>
 </div>
   <div class="col-6">
   <div class="card text-bg-light mb-3 shadow col" style="max-width: 18rem;">
-    <div class="card-header bg-primary text-white"><h1>${info.Employee} 
+    <div class="card-header bg-primary text-white"><h1>${info[1].name} 
     <br>
-     ${info.role}</h1>
+     ${info[1].role}</h1>
   </div>
     </div>
     <div class="card-body">
  
       <ul class="list-group list-group-flush">
         <!-- Input email and github -->
-        <li class="list-group-item">ID:${info.EmployeeID}</li>
-        <li class="list-group-item">Email:${info.EEmail}</li>
-        <li class="list-group-item">GitHub:${info.GitHub}</li>
+        <li class="list-group-item">ID: ${info[1].id} </li>
+        <li class="list-group-item">Email:${info[1].email}</li>
+        <li class="list-group-item">Office number:${info[1].Office}</li>
       </ul>
     </div>
   </div>
 </div>
   <div class="col-6">
   <div class="card text-bg-light mb-3 shadow col" style="max-width: 18rem;">
-    <div class="card-header bg-primary text-white"><h1>${info.Employee} 
+    <div class="card-header bg-primary text-white"><h1>${info[2].name} 
       <br>
-       ${info.role}</h1>
+       ${info[2].role}</h1>
     </div>
     <div class="card-body">
  
       <ul class="list-group list-group-flush">
         <!-- Input email and github -->
-        <li class="list-group-item">ID:${info.EmployeeID}</li>
-        <li class="list-group-item">Email:${info.EEmail}</li>
-        <li class="list-group-item">GitHub:${info.GitHub}</li>
+        <li class="list-group-item">ID: ${info[2].id} </li>
+        <li class="list-group-item">Email:${info[2].email}</li>
+        <li class="list-group-item">Office number:${info[2].Office}</li>
       </ul>
     </div>
   </div>
@@ -80,34 +77,34 @@ function generateEmployeeInfo(info) {
 
 <div class="col-6">
   <div class="card text-bg-light mb-3 shadow col" style="max-width: 18rem;">
-    <div class="card-header bg-primary text-white"><h1>${info.Employee} 
+    <div class="card-header bg-primary text-white"><h1>${info[3].name} 
       <br>
-      ${info.role}</h1>
+      ${info[3].role}</h1>
     </div>
     <div class="card-body">
  
       <ul class="list-group list-group-flush">
         <!-- Input email and github -->
-        <li class="list-group-item">ID:${info.EmployeeID}</li>
-        <li class="list-group-item">Email:${info.EEmail}</li>
-        <li class="list-group-item">GitHub:${info.GitHub}</li>
+        <li class="list-group-item">ID: ${info[3].id} </li>
+        <li class="list-group-item">Email:${info[3].email}</li>
+        <li class="list-group-item">Office number:${info[3].Office}</li>
       </ul>
     </div>
   </div>
 </div>
 <div class="col-6">
   <div class="card text-bg-light mb-3 shadow col" style="max-width: 18rem;">
-    <div class="card-header bg-primary text-white"><h1>${info.Employee}  
+    <div class="card-header bg-primary text-white"><h1>${info[4].name}  
       <br>
-     ${info.role}</h1>
+     ${info[4].role}</h1>
     </div>
     <div class="card-body">
  
       <ul class="list-group list-group-flush">
         <!-- Input email and School -->
-        <li class="list-group-item">ID:${info.EmployeeID}</li>
-        <li class="list-group-item">Email:${info.EEmail}</li>
-        <li class="list-group-item">GitHub:${info.GitHub}</li>
+        <li class="list-group-item">ID: ${info[4].id} </li>
+        <li class="list-group-item">Email:${info[4].email}</li>
+        <li class="list-group-item">Office number:${info[4].Office}</li>
       </ul>
     </div>
   </div>
