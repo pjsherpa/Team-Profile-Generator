@@ -1,5 +1,5 @@
 function generateEmployeeInfo(info) {
-  `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -52,7 +52,7 @@ function generateEmployeeInfo(info) {
         <!-- Input email and github -->
         <li class="list-group-item">ID: ${info[1].id} </li>
         <li class="list-group-item">Email:${info[1].email}</li>
-        <li class="list-group-item">Office number:${info[1].Office}</li>
+        <li class="list-group-item">Office number:${info[1].github}</li>
       </ul>
     </div>
   </div>
@@ -69,7 +69,7 @@ function generateEmployeeInfo(info) {
         <!-- Input email and github -->
         <li class="list-group-item">ID: ${info[2].id} </li>
         <li class="list-group-item">Email:${info[2].email}</li>
-        <li class="list-group-item">Office number:${info[2].Office}</li>
+        <li class="list-group-item">Office number:${info[2].github}</li>
       </ul>
     </div>
   </div>
@@ -87,14 +87,17 @@ function generateEmployeeInfo(info) {
         <!-- Input email and github -->
         <li class="list-group-item">ID: ${info[3].id} </li>
         <li class="list-group-item">Email:${info[3].email}</li>
-        <li class="list-group-item">Office number:${info[3].Office}</li>
+        <li class="list-group-item">Office number:${info[3].github}</li>
       </ul>
     </div>
   </div>
 </div>
 <div class="col-6">
   <div class="card text-bg-light mb-3 shadow col" style="max-width: 18rem;">
-    <div class="card-header bg-primary text-white"><h1>${info[4].name}  
+    <div class="card-header bg-primary text-white"><h1>${console.log(
+      "Phinjok.......",
+      info
+    )} 
       <br>
      ${info[4].role}</h1>
     </div>
@@ -104,7 +107,7 @@ function generateEmployeeInfo(info) {
         <!-- Input email and School -->
         <li class="list-group-item">ID: ${info[4].id} </li>
         <li class="list-group-item">Email:${info[4].email}</li>
-        <li class="list-group-item">Office number:${info[4].Office}</li>
+        <li class="list-group-item">Office number:${info[4].school}</li>
       </ul>
     </div>
   </div>

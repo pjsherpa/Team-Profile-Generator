@@ -6,15 +6,22 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const newEmployee = [];
+const removedChoices = [];
 
-const choices = function () {
+const choices = function (choice) {
+  removedChoices.push(choice);
+  const allChoices = ["Manager", "Engineer", "Intern", "Position's Filled"];
+  const updatedChoices = allChoices.filter((item) => {
+    return !removedChoices.includes(item);
+  });
+  console.log("updatedChoice......", updatedChoices);
   inquirer
     .prompt([
       {
         name: "employee",
         type: "list",
         message: "Position:",
-        choices: ["Manager", "Engineer", "Intern", "Position's Filled"],
+        choices: updatedChoices,
       },
     ])
     .then(function (select) {
@@ -109,7 +116,8 @@ const managerQ = function () {
         manager.role = "Manager";
       }
       newEmployee.push(manager);
-      return choices();
+
+      return choices("Manager");
     });
 };
 
@@ -150,23 +158,22 @@ const internQ = function () {
         intern.role = "Intern";
         newEmployee.push(intern);
       }
-      return choices();
+      return choices("Intern");
     });
 };
 
 choices();
 
 function positionfilled() {
-  console.log(newEmployee);
   fs.writeFileSync(
     "./dist/index.html",
-    generateEmployeeInfo(newEmployee),
+    generateEmployeeInfo(newEmployee).toString(),
     "utf-8",
     function (err) {
       if (err) {
         throw err;
       } else {
-        console.log("Success! A readme file has now been created.");
+        console.log("Success! A file has now been created.");
       }
     }
   );
