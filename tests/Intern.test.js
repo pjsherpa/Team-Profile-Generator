@@ -1,40 +1,30 @@
 const Intern = require("../lib/Intern");
-const intern = new Intern("Pj", 1, "pj@gmail.com", "Intern", "UCB");
+const intern = new Intern("Pj", 2, "pj@gmail.com", "Intern", "UCB");
 
 test("Information for constructor object", () => {
-  expect(Intern.name).toBe(String);
-  expect(Intern.id).toBe(Number);
-  expect(Intern.email).toBe(String);
-  expect(Intern.role).toBe(String);
-  expect(Intern.school).toBe(String);
+  expect(intern.name).toBe("Pj");
+  expect(intern.id).toBe(2);
+  expect(intern.email).toBe("pj@gmail.com");
+  expect(intern.role).toBe("Intern");
+  expect(intern.school).toBe("UCB");
 });
 
 test("Information from getName method", () => {
-  const testName = "Pj";
-  const obj = new Intern(testName);
-  expect(Intern.getName(obj.name).toBe(testName));
+  expect(intern.getName()).toBe("Pj");
 });
 
 test("Information from getId method", () => {
-  const testId = "1";
-  const obj = new Intern(testId);
-  expect(Intern.getId(obj.id).toBe(testId));
+  expect(intern.getId()).toBe(2);
 });
 
 test("Information from getemail method", () => {
-  const testEmail = "pj@gmail.com";
-  const obj = new Intern(testEmail);
-  expect(Intern.getEmail(obj.email).toBe(testEmail));
+  expect(intern.getEmail()).toBe("pj@gmail.com");
 });
 
 test("Information from getrole method", () => {
-  const testRole = "intern";
-  const obj = new Intern(testRole);
-  expect(Intern.getRole(obj.role).toBe(testRole));
+  expect(intern.getRole()).toBe("Intern");
 });
 
 test("Information from school method", () => {
-  const testSchool = "UCB";
-  const obj = new Intern(testSchool);
-  expect(Intern.school(obj.school).toBe(testSchool));
+  expect(intern.getSchool()).toBe("UCB");
 });

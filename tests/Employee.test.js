@@ -1,25 +1,18 @@
 const Employee = require("../lib/Employee");
+const employee = new Employee("Pj", 1, "pj@gmail.com", "Engineer");
 
 test("Information from getName method making sure its a string", () => {
-  const name = "Pj";
-  const obj = new Employee(name);
-  expect(Employee.getName(obj.name).toBe("name"));
+  expect(employee.getName()).toBe("Pj");
 });
 
 test("Information from getId method", () => {
-  const testId = "1";
-  const obj = new Employee(testId);
-  expect(Employee.getId(obj.id).toBe("testId"));
+  expect(employee.getId()).toBe(1);
 });
 
 test("Information from getemail method", () => {
-  const testEmail = "pj@gmail.com";
-  const obj = new Employee(testEmail);
-  expect(Employee.getEmail(obj.mail).toBe(testEmail));
+  expect(employee.getEmail()).toBe("pj@gmail.com");
 });
 
 test("Information from getrole method", () => {
-  const testRole = "Employee";
-  const obj = new Employee(testRole);
-  expect(Employee.getRole(obj.role).toBe(testRole));
+  expect(employee.getRole()).toBe("Engineer");
 });
