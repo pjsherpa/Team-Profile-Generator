@@ -1,9 +1,32 @@
 {
   "dependencies": {
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
     "inquirer": "^8.2.4"
   },
   "devDependencies": {
-    "@types/jest": "^28.1.7"
-  }
+    "@types/jest": "^28.1.7",
+    "jest": "^28.1.3",
+    "jest-cli": "^28.1.3"
+  },
+  "name": "challenge-10",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjsherpa/Team-Profile-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjsherpa/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/pjsherpa/Team-Profile-Generator#readme",
+  "description": ""
 }

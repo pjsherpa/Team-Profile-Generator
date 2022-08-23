@@ -62,17 +62,17 @@ const engineerQ = function () {
         message: "Please provide GitHub Username?",
       },
     ])
-    .then((engineer) => {
-      console.log(engineer);
-      var engineer = new Engineer(
-        engineer.id,
-        engineer.name,
-        engineer.email,
-        engineer.github,
-        engineer.role
+    .then((eng) => {
+      console.log(eng);
+      const engineer = new Engineer(
+        eng.id,
+        eng.name,
+        eng.email,
+        eng.github,
+        eng.role
       );
-      if (engineer.github) {
-        engineer.role = "Engineer";
+      if (eng.github) {
+        eng.role = "Engineer";
       }
       newEmployee.push(engineer);
       return choices();
@@ -104,16 +104,17 @@ const managerQ = function () {
         message: "Please provide office number?",
       },
     ])
-    .then((manager) => {
-      console.log(manager);
-      var manager = new Manager(
-        manager.id,
-        manager.name,
-        manager.email,
-        manager.office
+    .then((man) => {
+      console.log(man);
+      const manager = new Manager(
+        man.id,
+        man.name,
+        man.email,
+        man.office,
+        man.role
       );
-      if (manager.office) {
-        manager.role = "Manager";
+      if (man.office) {
+        man.role = "Manager";
       }
       newEmployee.push(manager);
 
@@ -146,16 +147,17 @@ const internQ = function () {
         message: "Which School did you go to?",
       },
     ])
-    .then((intern) => {
-      console.log(intern);
-      var intern = new Intern(
-        intern.id,
-        intern.name,
-        intern.email,
-        intern.school
+    .then((int) => {
+      console.log(int);
+      const intern = new Intern(
+        int.id,
+        int.name,
+        int.email,
+        int.school,
+        int.role
       );
       if (intern.school) {
-        intern.role = "Intern";
+        int.role = "Intern";
         newEmployee.push(intern);
       }
       return choices("Intern");
