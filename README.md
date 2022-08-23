@@ -14,7 +14,6 @@
 ### Project Description:
 
 This project demonstrates how we can Build a simple team profile using backend development. The Directory Struture format created and using parent class as a blueprint to build a more structured and organised folder for our codes. 
-This assignment was a good build up for demonstrating a programming paradigm also known as OOP. This is built on the idea of "objects," which are capable of holding both code and data in the form of fields and procedures, respectively. Objects frequently have procedures connected to them that have access to and control over the data fields of the object.  
 
 ### Installation:
 npm i
