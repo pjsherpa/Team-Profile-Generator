@@ -20,9 +20,6 @@ test("Information from getemail method", () => {
   expect(engineer.getEmail()).toEqual("pj@gmail.com");
 });
 
-test("Information from getrole method", () => {
-  expect(engineer.getRole()).toEqual("Engineer");
-});
 test("Information from github method", () => {
   expect(engineer.getGithub()).toEqual("pjSherpa");
 });

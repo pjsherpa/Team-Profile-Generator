@@ -1,7 +1,6 @@
 const generateEmployeeInfo = require("./src/generateEmployeeInfo");
 const fs = require("fs");
 const inquirer = require("inquirer");
-const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -14,7 +13,7 @@ const choices = function (choice) {
   const updatedChoices = allChoices.filter((item) => {
     return !removedChoices.includes(item);
   });
-  console.log("updatedChoice......", updatedChoices);
+
   inquirer
     .prompt([
       {
@@ -41,14 +40,14 @@ const engineerQ = function () {
   inquirer
     .prompt([
       {
-        name: "id",
-        type: "input",
-        message: "What is the Employee Id number?",
-      },
-      {
         name: "name",
         type: "input",
         message: "What is the name of the Employee?",
+      },
+      {
+        name: "id",
+        type: "input",
+        message: "What is the Employee Id number?",
       },
 
       {
@@ -65,8 +64,8 @@ const engineerQ = function () {
     .then((eng) => {
       console.log(eng);
       const engineer = new Engineer(
-        eng.id,
         eng.name,
+        eng.id,
         eng.email,
         eng.github,
         eng.role
@@ -75,7 +74,7 @@ const engineerQ = function () {
         eng.role = "Engineer";
       }
       newEmployee.push(engineer);
-      return choices();
+      return choices("Engineer");
     });
 };
 
@@ -83,16 +82,15 @@ const managerQ = function () {
   inquirer
     .prompt([
       {
-        name: "id",
-        type: "input",
-        message: "What is the Employee Id number?",
-      },
-      {
         name: "name",
         type: "input",
         message: "What is the name of the Employee?",
       },
-
+      {
+        name: "id",
+        type: "input",
+        message: "What is the Employee Id number?",
+      },
       {
         name: "email",
         type: "input",
@@ -107,8 +105,8 @@ const managerQ = function () {
     .then((man) => {
       console.log(man);
       const manager = new Manager(
-        man.id,
         man.name,
+        man.id,
         man.email,
         man.office,
         man.role
@@ -126,14 +124,14 @@ const internQ = function () {
   inquirer
     .prompt([
       {
-        name: "id",
-        type: "input",
-        message: "What is the Employee Id number?",
-      },
-      {
         name: "name",
         type: "input",
         message: "What is the name of the Employee?",
+      },
+      {
+        name: "id",
+        type: "input",
+        message: "What is the Employee Id number?",
       },
 
       {
@@ -150,16 +148,16 @@ const internQ = function () {
     .then((int) => {
       console.log(int);
       const intern = new Intern(
-        int.id,
         int.name,
+        int.id,
         int.email,
         int.school,
         int.role
       );
-      if (intern.school) {
+      if (int.school) {
         int.role = "Intern";
-        newEmployee.push(intern);
       }
+      newEmployee.push(intern);
       return choices("Intern");
     });
 };
@@ -167,9 +165,11 @@ const internQ = function () {
 choices();
 
 function positionfilled() {
+  console.log(newEmployee);
   fs.writeFileSync(
     "./dist/index.html",
-    generateEmployeeInfo(newEmployee).toString(),
+    generateEmployeeInfo(newEmployee),
+
     "utf-8",
     function (err) {
       if (err) {

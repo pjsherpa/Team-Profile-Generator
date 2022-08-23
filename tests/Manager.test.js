@@ -1,10 +1,9 @@
 const Manager = require("../lib/Manager");
-const manager = new Manager("Pj", "Manager", "pj@gmail.com", 1, 1);
+const manager = new Manager("Pj", 1, "pj@gmail.com", 1, "Manager");
 
 test("Information for constructor object", () => {
   expect(manager.name).toBe("Pj");
   expect(manager.id).toBe(1);
-  expect(manager.role).toBe("Manager");
   expect(manager.email).toBe("pj@gmail.com");
   expect(manager.office).toBe(1);
 });

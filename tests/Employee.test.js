@@ -12,7 +12,3 @@ test("Information from getId method", () => {
 test("Information from getemail method", () => {
   expect(employee.getEmail()).toBe("pj@gmail.com");
 });
-
-test("Information from getrole method", () => {
-  expect(employee.getRole()).toBe("Engineer");
-});
