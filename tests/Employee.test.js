@@ -14,12 +14,12 @@ test("Information from getId method", () => {
 
 test("Information from getemail method", () => {
   const testEmail = "pj@gmail.com";
-  const obj = new Employee(testId);
-  expect(Employee.getEmail(obj.mail).toBe("testEmail"));
+  const obj = new Employee(testEmail);
+  expect(Employee.getEmail(obj.mail).toBe(testEmail));
 });
 
 test("Information from getrole method", () => {
-  const testRole = "pj@gmail.com";
+  const testRole = "Employee";
   const obj = new Employee(testRole);
-  expect(Employee.getRole(obj.testRole).toBe("Engineer"));
+  expect(Employee.getRole(obj.role).toBe(testRole));
 });

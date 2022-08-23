@@ -14,31 +14,25 @@ test("Information from getName method", () => {
   expect(engineer.getName(obj.name).toBe(testName));
 });
 
-test("Information from getName method", () => {
-  const testName = "Pj";
-  const obj = new Engineer(testName);
-  expect(engineer.getName(obj.name).toBe(testName));
-});
-
 test("Information from getId method", () => {
   const testId = "1";
   const obj = new Engineer(testId);
-  expect(engineer.getId().toBe(testId));
+  expect(engineer.getId(obj.id).toBe(testId));
 });
 
 test("Information from getemail method", () => {
   const testEmail = "pj@gmail.com";
-  const obj = new Engineer(testId);
-  expect(engineer.getEmail(obj.testEmail).toBe(testEmail));
+  const obj = new Engineer(testEmail);
+  expect(engineer.getEmail(obj.email).toBe(testEmail));
 });
 
 test("Information from getrole method", () => {
   const testRole = "Engineer";
   const obj = new Engineer(testRole);
-  expect(engineer.getRole(obj.testRole).toBe(testRole));
+  expect(engineer.getRole(obj.role).toBe(testRole));
 });
 test("Information from github method", () => {
-  const testGithub = "pjSherpa.com";
+  const testGithub = "pjSherpa";
   const obj = new Engineer(testGithub);
-  expect(engineer.github(obj.testGithub).toBe(testGithub));
+  expect(engineer.github(obj.github).toBe(testGithub));
 });
