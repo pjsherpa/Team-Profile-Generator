@@ -1,6 +1,6 @@
 # Team-Profile-Generator 
   [![License](https://img.shields.io/badge/license--blue.svg)
-      ](https://opensource.org/licenses/m)
+      ](https://opensource.org/licenses/mit)
   
   Table of Content:
   1. [Project Description](#Project-Description)
