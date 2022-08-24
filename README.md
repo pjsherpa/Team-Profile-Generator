@@ -1,6 +1,6 @@
 # Team-Profile-Generator 
   [![License](https://img.shields.io/badge/license--blue.svg)
-      ](https://opensource.org/licenses/)
+      ](https://opensource.org/licenses/m)
   
   Table of Content:
   1. [Project Description](#Project-Description)
@@ -14,6 +14,15 @@
 ### Project Description:
 
 This project demonstrates how we can Build a simple team profile using backend development. The Directory Struture format created and using parent class as a blueprint to build a more structured and organised folder for our codes. 
+
+How it works?
+1. A command-line application which accepts user inputs.
+2. There are 4 choices with 4 different functions.
+3. There are 3 questions which all employees receieve. 
+3. A function has been created which allows us to access the 4th questions for all 3 employees separately.
+4.Once the 4th choice has been selected or all position has been met the Html is generated.
+5. The Github username and email address once "clicked" will go the github and emaill address populates the To Field on a default email program.
+
 
 ### Installation:
 npm i
