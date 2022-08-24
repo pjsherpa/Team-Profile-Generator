@@ -33,7 +33,7 @@ Building Team Profile using backend development.
 
 ### Contribution Guideline:
 
-The main purpose of this repository is to create a readme file quick and consistent. I would be grateful to the community for contributing more questions and improvement for this readme-generator as per desired.
+The main purpose of this repository is to create a readme file quick and consistent. I would be grateful to the community for contributing more questions and improvement for this Team-Profile-Generator as per desired.
 
 ### Tests:
 
